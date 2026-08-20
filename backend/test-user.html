@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test User</title>
+</head>
+
+<body>
+
+  <body>
+
+    <h1>Spotify Login</h1>
+
+    <input id="email" placeholder="Email">
+
+    <input
+        id="password"
+        placeholder="Password"
+        type="password"
+    >
+
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+
+    <script>
+
+        async function login() {
+
+            const user = {
+
+                email: document.getElementById("email").value,
+
+                password: document.getElementById("password").value
+
+            };
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:5000/api/login",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(user)
+                    }
+                );
+
+                const data = await response.json();
+
+                document.getElementById("message").textContent =
+                    data.message;
+
+                console.log(data);
+
+            } catch (error) {
+
+                document.getElementById("message").textContent =
+                    "Server connection failed";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</body>
+</html>

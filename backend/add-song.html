@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Song</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #121212;
+            color: white;
+            padding: 40px;
+        }
+
+        input {
+            display: block;
+            width: 300px;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #1db954;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Add Song 🎵</h1>
+
+    <input id="title" placeholder="Song title">
+
+    <input id="artist" placeholder="Artist">
+
+    <input id="album" placeholder="Album">
+
+    <input id="image" placeholder="Image URL">
+
+    <input id="audio" placeholder="Audio path">
+
+    <button onclick="addSong()">Add Song</button>
+
+    <p id="message"></p>
+
+
+    <script>
+
+        async function addSong() {
+
+            const song = {
+
+                title: document.getElementById("title").value,
+
+                artist: document.getElementById("artist").value,
+
+                album: document.getElementById("album").value,
+
+                image: document.getElementById("image").value,
+
+                audio: document.getElementById("audio").value
+
+            };
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:5000/api/songs",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(song)
+                    }
+                );
+
+                const data = await response.json();
+
+                if (response.ok) {
+
+                    document.getElementById("message").textContent =
+                        "✅ Song added successfully!";
+
+                } else {
+
+                    document.getElementById("message").textContent =
+                        "❌ " + data.message;
+
+                }
+
+            } catch (error) {
+
+                document.getElementById("message").textContent =
+                    "❌ Server connection failed";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
