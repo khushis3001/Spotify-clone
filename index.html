@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spotify Clone</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="spotify-logo">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h2>Spotify</h2>
+        </div>
+
+        <nav class="main-nav">
+
+            <a href="#" class="nav-item active" id="homeBtn">
+                <span class="icon">⌂</span>
+                Home
+            </a>
+
+            <a href="#" class="nav-item" id="searchBtn">
+                <span class="icon">⌕</span>
+                Search
+            </a>
+
+            <a href="#" class="nav-item" id="libraryBtn">
+                <span class="icon">▤</span>
+                Your Library
+            </a>
+
+        </nav>
+
+        <div class="playlist-heading">
+            <span>+</span>
+            Create Playlist
+        </div>
+
+        <div class="playlist-heading">
+            <span>♡</span>
+            Liked Songs
+        </div>
+
+        <hr>
+
+        <div class="side-playlists">
+
+            <p>My Playlist #1</p>
+            <p>Chill Vibes</p>
+            <p>Workout Mix</p>
+            <p>Favorites</p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="arrows">
+                <button>‹</button>
+                <button>›</button>
+            </div>
+
+            <div class="search-box" id="searchBox">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="What do you want to play?"
+                >
+
+            </div>
+
+            <div class="profile">
+                <div class="profile-image">K</div>
+                <span>Khushi</span>
+                <span>⌄</span>
+            </div>
+
+        </header>
+
+
+        <!-- HOME -->
+        <section id="homeSection">
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <p>YOUR MUSIC</p>
+
+                    <h1>Good afternoon</h1>
+
+                    <p class="hero-text">
+                        Discover your favorite songs and enjoy your music.
+                    </p>
+
+                    <button class="play-btn" id="heroPlay">
+                        ▶ Play
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK PICKS -->
+            <section class="section">
+
+                <h2>Quick picks</h2>
+
+                <div class="quick-grid">
+
+                    <div class="quick-card song-card"
+                         data-title="Blinding Lights"
+                         data-artist="The Weeknd"
+                         data-image="https://i.scdn.co/image/ab67616d0000b273c2c8b9f2f0a9d9f7c1b8a9e7"
+                         data-song="songs/song1.mp3">
+
+                        <img src="https://picsum.photos/100?random=1">
+
+                        <div>
+                            <b>Blinding Lights</b>
+                            <p>The Weeknd</p>
+                        </div>
+
+                        <button class="small-play">▶</button>
+
+                    </div>
+
+
+                    <div class="quick-card song-card"
+                         data-title="Starboy"
+                         data-artist="The Weeknd"
+                         data-song="songs/song2.mp3">
+
+                        <img src="https://picsum.photos/100?random=2">
+
+                        <div>
+                            <b>Starboy</b>
+                            <p>The Weeknd</p>
+                        </div>
+
+                        <button class="small-play">▶</button>
+
+                    </div>
+
+
+                    <div class="quick-card song-card"
+                         data-title="Perfect"
+                         data-artist="Ed Sheeran"
+                         data-song="songs/song3.mp3">
+
+                        <img src="https://picsum.photos/100?random=3">
+
+                        <div>
+                            <b>Perfect</b>
+                            <p>Ed Sheeran</p>
+                        </div>
+
+                        <button class="small-play">▶</button>
+
+                    </div>
+
+
+                    <div class="quick-card song-card"
+                         data-title="Shape of You"
+                         data-artist="Ed Sheeran"
+                         data-song="songs/song1.mp3">
+
+                        <img src="https://picsum.photos/100?random=4">
+
+                        <div>
+                            <b>Shape of You</b>
+                            <p>Ed Sheeran</p>
+                        </div>
+
+                        <button class="small-play">▶</button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MADE FOR YOU -->
+            <section class="section">
+
+                <h2>Made For You</h2>
+
+                <div class="music-grid">
+
+                    <div class="music-card song-card"
+                         data-title="Daily Mix 1"
+                         data-artist="The Weeknd, Drake and more"
+                         data-song="songs/song1.mp3">
+
+                        <div class="album-image">
+                            <img src="https://picsum.photos/300?random=10">
+
+                            <button class="card-play">▶</button>
+                        </div>
+
+                        <h3>Daily Mix 1</h3>
+
+                        <p>
+                            The Weeknd, Drake and more
+                        </p>
+
+                    </div>
+
+
+                    <div class="music-card song-card"
+                         data-title="Chill Hits"
+                         data-artist="Relaxing music"
+                         data-song="songs/song2.mp3">
+
+                        <div class="album-image">
+
+                            <img src="https://picsum.photos/300?random=11">
+
+                            <button class="card-play">▶</button>
+
+                        </div>
+
+                        <h3>Chill Hits</h3>
+
+                        <p>
+                            Chill out and relax
+                        </p>
+
+                    </div>
+
+
+                    <div class="music-card song-card"
+                         data-title="Today's Top Hits"
+                         data-artist="Popular artists"
+                         data-song="songs/song3.mp3">
+
+                        <div class="album-image">
+
+                            <img src="https://picsum.photos/300?random=12">
+
+                            <button class="card-play">▶</button>
+
+                        </div>
+
+                        <h3>Today's Top Hits</h3>
+
+                        <p>
+                            The biggest hits right now
+                        </p>
+
+                    </div>
+
+
+                    <div class="music-card song-card"
+                         data-title="Rock Classics"
+                         data-artist="Rock legends"
+                         data-song="songs/song1.mp3">
+
+                        <div class="album-image">
+
+                            <img src="https://picsum.photos/300?random=13">
+
+                            <button class="card-play">▶</button>
+
+                        </div>
+
+                        <h3>Rock Classics</h3>
+
+                        <p>
+                            Rock legends and classics
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- SEARCH SECTION -->
+        <section class="hidden-section" id="searchSection">
+
+            <h1>Search</h1>
+
+            <div class="big-search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="bigSearchInput"
+                    placeholder="What do you want to play?"
+                >
+
+            </div>
+
+            <div id="searchResults"></div>
+
+        </section>
+
+
+        <!-- LIBRARY SECTION -->
+        <section class="hidden-section" id="librarySection">
+
+            <h1>Your Library</h1>
+
+            <div class="library-tabs">
+
+                <button class="active">Playlists</button>
+                <button>Artists</button>
+                <button>Albums</button>
+
+            </div>
+
+            <div class="music-grid">
+
+                <div class="music-card">
+
+                    <div class="album-image">
+
+                        <img src="https://picsum.photos/300?random=20">
+
+                    </div>
+
+                    <h3>Liked Songs</h3>
+
+                    <p>Playlist • 25 songs</p>
+
+                </div>
+
+                <div class="music-card">
+
+                    <div class="album-image">
+
+                        <img src="https://picsum.photos/300?random=21">
+
+                    </div>
+
+                    <h3>My Playlist</h3>
+
+                    <p>Playlist • 18 songs</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PLAYER -->
+    <footer class="player">
+
+        <div class="now-playing">
+
+            <img
+                id="playerImage"
+                src="https://picsum.photos/100?random=1"
+            >
+
+            <div>
+
+                <h4 id="playerTitle">
+                    Blinding Lights
+                </h4>
+
+                <p id="playerArtist">
+                    The Weeknd
+                </p>
+
+            </div>
+
+            <button id="likeBtn">♡</button>
+
+        </div>
+
+
+        <div class="player-center">
+
+            <div class="controls">
+
+                <button id="shuffleBtn">⤨</button>
+
+                <button id="previousBtn">◀</button>
+
+                <button class="main-play" id="playBtn">
+                    ▶
+                </button>
+
+                <button id="nextBtn">▶</button>
+
+                <button id="repeatBtn">↻</button>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <span id="currentTime">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progress"
+                    value="0"
+                    min="0"
+                    max="100"
+                >
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="volume">
+
+            <span>🔊</span>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.7"
+            >
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
